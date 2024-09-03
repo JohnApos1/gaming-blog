@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews - Gaming Blog</title>
+    <link rel="stylesheet" href="../css/reviews.css">
+    <link rel="icon" href="../images/website-favicon.png" type="image/x-icon">
+</head>
+<body>
+
+    <header>
+        <a href="../index.html" class="header-link">
+            <h1>Gaming Blog</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../html/latest.html">Latest</a></li>
+                <li><a href="../html/reviews.html">Reviews</a></li>
+                <li><a href="../html/contact.html">Contact Me</a></li>
+
+                <button class="toggle-dark-mode">Dark Mode</button>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="background-container"> <!-- Background container -->
+            <section class="reviews">
+                <h2>Game Reviews</h2>
+
+                <article class="review">
+                    <img src="../images/handheld-console.jpg" alt="Game 1 Image">
+                    <div class="review-content">
+                        <h3>Lorem Ipsum</h3>
+                        <ul>
+                            <li>Graphics: <strong>9/10</strong></li>
+                            <li>Gameplay: <strong>8/10</strong></li>
+                            <li>Story: <strong>7.5/10</strong></li>
+                            <li>Sound: <strong>8.5/10</strong></li>
+                            <li>Overall: <strong>8.3/10</strong></li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="review">
+                    <img src="../images/japanese-arcade.jpg" alt="Game 2 Image">
+                    <div class="review-content">
+                        <h3>Lorem Ipsum</h3>
+                        <ul>
+                            <li>Graphics: <strong>8/10</strong></li>
+                            <li>Gameplay: <strong>7/10</strong></li>
+                            <li>Story: <strong>6.5/10</strong></li>
+                            <li>Sound: <strong>7/10</strong></li>
+                            <li>Overall: <strong>7.1/10</strong></li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="review">
+                    <img src="../images/lan-party.jpg" alt="Game 3 Image">
+                    <div class="review-content">
+                        <h3>Lorem Ipsum</h3>
+                        <ul>
+                            <li>Graphics: <strong>9.5/10</strong></li>
+                            <li>Gameplay: <strong>9/10</strong></li>
+                            <li>Story: <strong>8.5/10</strong></li>
+                            <li>Sound: <strong>9/10</strong></li>
+                            <li>Overall: <strong>9/10</strong></li>
+                        </ul>
+                    </div>
+                </article>
+                
+                <!-- Add more reviews as needed -->
+
+                <!-- Success/Error Message Section -->
+                <div id="message" class="message"></div>
+            </section>
+        </div> <!-- End of background container -->
+    </main>
+
+    <footer>
+
+        <div class="newsletter">
+            <h4>Subscribe to our Newsletter</h4>
+            <form action="../php/subscribe.php" method="post" id="newsletter-form">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            
+        </div>
+
+        <div class="social-media">
+            <a href="https://tiktok.com" target="_blank">TikTok</a> |
+            <a href="https://discord.com" target="_blank">Discord</a> |
+            <a href="https://youtube.com" target="_blank">YouTube</a>
+        </div>
+        <p>&copy; 2024 Gaming Blog. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleButton = document.querySelector('.toggle-dark-mode');
+            toggleButton.addEventListener('click', function () {
+                document.body.classList.toggle('dark-mode');
+                document.querySelector('header').classList.toggle('dark-mode');
+                document.querySelector('footer').classList.toggle('dark-mode');
+            });
+        
+            // Check if user has a preferred theme
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                // Automatically enable dark mode if user prefers it
+                document.body.classList.add('dark-mode');
+                document.querySelector('header').classList.add('dark-mode');
+                document.querySelector('footer').classList.add('dark-mode');
+            }
+        });
+    </script>
+
+    <!-- JavaScript to handle success/error messages -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const messageDiv = document.getElementById("message");
+
+            if (urlParams.has('subscribed')) {
+                const status = urlParams.get('subscribed');
+                if (status === 'success') {
+                    messageDiv.textContent = "Thank you for subscribing!";
+                    messageDiv.classList.add('success');
+                } else if (status === 'error') {
+                    messageDiv.textContent = "There was an error with your subscription. Please try again.";
+                    messageDiv.classList.add('error');
+                }
+            }
+        });
+    </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const messageDiv = document.getElementById("message");
+
+        if (urlParams.has('subscribed')) {
+            const status = urlParams.get('subscribed');
+            if (status === 'success') {
+                messageDiv.textContent = "Thank you for subscribing!";
+                messageDiv.classList.add('success');
+                messageDiv.style.display = 'block';
+            } else if (status === 'error') {
+                messageDiv.textContent = "There was an error with your subscription. Please try again.";
+                messageDiv.classList.add('error');
+                messageDiv.style.display = 'block';
+            }
+        }
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,334 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark mode specific styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ddd;
+}
+
+/* Header Link Styling */
+.header-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.header-link h1 {
+    margin: 0;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 2.5rem;
+    color: inherit; /* Inherit color from header */
+}
+
+/* Message Styles */
+.message {
+    margin-top: 20px;
+    padding: 10px;
+    display: none; /* Initially hidden */
+    text-align: center;
+    border-radius: 5px;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Header and Footer Styles */
+header {
+    background-color: #4b4a4a;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header, footer {
+    background-color: #4b4a4a;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header.dark-mode, footer.dark-mode {
+    background-color: #333;
+    color: #ddd;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #4b4a4a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode footer {
+    background-color: #333;
+    color: #ddd;
+}
+
+footer .newsletter {
+    margin-bottom: 10px;
+}
+
+footer .newsletter h4 {
+    margin-bottom: 10px;
+    color: white;
+}
+
+body.dark-mode footer .newsletter h4 {
+    color: #ddd;
+}
+
+footer .newsletter form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+footer .newsletter input[type="email"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 250px;
+    max-width: 100%;
+}
+
+footer .newsletter button {
+    padding: 10px 20px;
+    background-color: #685e5e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer .newsletter button:hover {
+    background-color: #636363;
+}
+
+footer .social-media {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+footer .social-media a {
+    color: white;
+    text-decoration: none;
+}
+
+body.dark-mode footer .social-media a {
+    color: #ddd;
+}
+
+footer .social-media a:hover {
+    text-decoration: underline;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+nav ul li {
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a, .toggle-dark-mode {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 15px;
+    font-size: 1rem;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover, .toggle-dark-mode:hover {
+    background-color: #333;
+}
+
+/* Dark Mode button specific styling */
+.toggle-dark-mode {
+    background-color: transparent;
+    border: 2px solid transparent;
+}
+
+body.dark-mode .toggle-dark-mode {
+    color: #121212;
+    background-color: white;
+    border: 2px solid #121212;
+}
+
+/* Home Page Specific Styles */
+.hero {
+    background: url('images/hero-background.jpg') no-repeat center center/cover;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Centering and Styling for Featured Articles Section */
+.featured-articles {
+    padding: 20px;
+    background: #f0f0f0;
+    margin: 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.featured-articles h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+body.dark-mode .featured-articles {
+    background-color: #333;
+}
+
+/* Centering and Responsiveness for Article Containers */
+.articles-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between; /* Adjusted for even spacing */
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+article {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 48%; /* Adjusted to allow two articles side by side */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(61, 61, 61, 0.1);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    box-sizing: border-box;
+}
+
+/* Dark mode styling for articles */
+body.dark-mode article {
+    background-color: #2a2a2a;
+    color: #ddd;
+}
+
+article img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+article h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #333;
+    text-align: center;
+}
+
+body.dark-mode article h3, 
+body.dark-mode article a {
+    color: #ddd;
+}
+
+article p {
+    font-size: 14px;
+    color: #bbbaba;
+    text-align: center;
+}
+
+body.dark-mode article p {
+    color: #ccc;
+}
+
+article a {
+    display: block;
+    text-align: right;
+    color: #333;
+    text-decoration: none;
+}
+
+article a:hover {
+    text-decoration: underline;
+}
+
+/* Hover Animation for Article */
+article:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .articles-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    article {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
+
+/* Message Styles */
+.message {
+    margin-top: 20px;
+    padding: 10px;
+    display: none;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
